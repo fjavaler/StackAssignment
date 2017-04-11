@@ -5,24 +5,38 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import Person.Person;
+
 public class LinkedStackTests
 {
-
+	LinkedStack<Person> stack;
+	Person me;
+	Person tasha;
+	Person presley;
+	Person javi;
+	
 	@Before
 	public void setUp() throws Exception
 	{
+		stack = new LinkedStack<Person>();
+		me = new Person("Fred Javalera", 36);
+		tasha = new Person("Tasha Javalera", 27);
+		presley = new Person("Presley Javalera", 2);
+		javi = new Person("Javi Javalera", 42);
 	}
 
 	@Test
 	public void testLinkedStack()
 	{
-		fail("Not yet implemented");
+//		assertTrue(stack.size() == 0);
 	}
 
 	@Test
 	public void testIsEmpty()
 	{
-		fail("Not yet implemented");
+//		stack.push(new Person("Fred Javalera", 36));
+//		stack.pop();
+//		assertTrue(stack.isEmpty());
 	}
 
 	@Test
@@ -40,13 +54,14 @@ public class LinkedStackTests
 	@Test
 	public void testPush()
 	{
-		fail("Not yet implemented");
+		stack.push(me);
+		stack.push(tasha);
 	}
 
 	@Test
 	public void testSize()
 	{
-		fail("Not yet implemented");
+		
 	}
 
 }
