@@ -11,20 +11,36 @@ import Person.Person;
 
 public class LinkedStackTests
 {
+	// fields
 	LinkedStack<Person> stack;
+	LinkedStack<Integer> integerStack;
 	Person me;
 	Person tasha;
 	Person presley;
 	Person javi;
-	
+	Integer one;
+	Integer ten;
+	Integer oneHundred;
+	Integer oneThousand;
+
 	@Before
 	public void setUp() throws Exception
 	{
+		// stacks
 		stack = new LinkedStack<Person>();
+		integerStack = new LinkedStack<Integer>();
+
+		// persons
 		me = new Person("Fred Javalera", 36);
 		tasha = new Person("Tasha Javalera", 27);
 		presley = new Person("Presley Javalera", 2);
 		javi = new Person("Javi Javalera", 42);
+
+		// integers
+		one = new Integer(1);
+		ten = new Integer(10);
+		oneHundred = new Integer(100);
+		oneThousand = new Integer(1000);
 	}
 
 	@Test
@@ -40,9 +56,17 @@ public class LinkedStackTests
 		stack.pop();
 		assertTrue(stack.isEmpty());
 	}
-	
+
 	@Test
 	public void testIsEmpty2()
+	{
+		integerStack.push(one);
+		integerStack.pop();
+		assertTrue(integerStack.isEmpty());
+	}
+
+	@Test
+	public void testIsEmpty3()
 	{
 		stack.push(me);
 		stack.push(tasha);
@@ -61,7 +85,7 @@ public class LinkedStackTests
 		assertEquals(Person.class, remove.getClass());
 		assertEquals(2, stack.size());
 	}
-	
+
 	@Test
 	public void testPeek2()
 	{
@@ -72,12 +96,24 @@ public class LinkedStackTests
 		assertEquals(Person.class, remove.getClass());
 		assertEquals(1, stack.size());
 	}
-	
-	@Test(expected=EmptyStackException.class)
+
+	@Test(expected = EmptyStackException.class)
 	public void testPeek3()
 	{
 		@SuppressWarnings("unused")
 		Person remove = stack.peek();
+	}
+
+	@Test
+	public void testPeek4()
+	{
+		integerStack.push(one);
+		integerStack.push(ten);
+		Integer peeked = integerStack.peek();
+		assertEquals("10", peeked.toString());
+		assertEquals(10, peeked.intValue());
+		assertEquals(Integer.class, peeked.getClass());
+		assertEquals(2, integerStack.size());
 	}
 
 	@Test
@@ -91,14 +127,14 @@ public class LinkedStackTests
 		assertEquals(Person.class, remove.getClass());
 		assertEquals(1, stack.size());
 	}
-	
-	@Test(expected=EmptyStackException.class)
+
+	@Test(expected = EmptyStackException.class)
 	public void testPop2()
 	{
 		@SuppressWarnings("unused")
 		Person remove = stack.pop();
 	}
-	
+
 	@Test
 	public void testPop3()
 	{
@@ -109,7 +145,7 @@ public class LinkedStackTests
 		assertEquals(Person.class, remove.getClass());
 		assertEquals(0, stack.size());
 	}
-	
+
 	@Test
 	public void testPop4()
 	{
@@ -125,6 +161,19 @@ public class LinkedStackTests
 	}
 
 	@Test
+	public void testPop5()
+	{
+		integerStack.push(one);
+		integerStack.push(ten);
+		integerStack.push(oneHundred);
+		integerStack.push(oneThousand);
+		Integer remove = integerStack.pop();
+		assertEquals(1000, remove.intValue());
+		assertEquals(Integer.class, remove.getClass());
+		assertEquals(3, integerStack.size());
+	}
+
+	@Test
 	public void testPush()
 	{
 		stack.push(me);
@@ -133,13 +182,21 @@ public class LinkedStackTests
 		stack.push(presley);
 		assertEquals(4, stack.size());
 	}
-	
+
 	@Test
 	public void testPush2()
 	{
 		stack.push(me);
 		stack.push(tasha);
 		assertEquals(2, stack.size());
+	}
+
+	@Test
+	public void testPush3()
+	{
+		integerStack.push(one);
+		integerStack.push(ten);
+		assertEquals(2, integerStack.size());
 	}
 
 	@Test
@@ -151,4 +208,12 @@ public class LinkedStackTests
 		assertEquals(3, stack.size());
 	}
 
+	@Test
+	public void testSize2()
+	{
+		integerStack.push(one);
+		integerStack.push(ten);
+		integerStack.push(oneThousand);
+		assertEquals(3, integerStack.size());
+	}
 }

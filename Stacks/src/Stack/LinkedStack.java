@@ -1,13 +1,17 @@
+
 package Stack;
 
 import java.util.EmptyStackException;
-
 import LinkedList.SinglyLinkedList;
 
 public class LinkedStack<E> implements Stack<E>
 {
+	//field
 	SinglyLinkedList<E> stack;
 
+	/**
+	 * constructor
+	 */
 	public LinkedStack()
 	{
 		stack = new SinglyLinkedList<E>();
@@ -55,7 +59,7 @@ public class LinkedStack<E> implements Stack<E>
 		if (isEmpty() == true)
 			throw new EmptyStackException();
 		E value = peek();
-		stack.remove(stack.getLength()-1);
+		stack.remove(stack.getLength() - 1);
 		return value;
 	}
 
