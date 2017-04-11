@@ -5,6 +5,7 @@ import LinkedList.SinglyLinkedList;
 
 public class LinkedStack<E> implements Stack<E>
 {
+	
 	SinglyLinkedList<E> stack = new SinglyLinkedList<E>();
 	SLNode<E> top = new SLNode<E>();
 	SLNode<E> bottom = new SLNode<E>();
