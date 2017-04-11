@@ -36,7 +36,7 @@ public class SinglyLinkedList<E>
 	 * Sets the head node to a new list.
 	 * 
 	 * @param newHead
-	 *          the head node of some list
+	 *            the head node of some list
 	 */
 	public void setHead(SLNode<E> newHead)
 	{
@@ -57,7 +57,7 @@ public class SinglyLinkedList<E>
 	 * Add a new element at the beginning of the linked list.
 	 * 
 	 * @param e
-	 *          the element to add
+	 *            the element to add
 	 */
 	public void add(E e)
 	{
@@ -68,25 +68,24 @@ public class SinglyLinkedList<E>
 	}
 
 	/**
-	 * Add element <code>e</code> at position <code>p</code> in this singly linked
-	 * list.
+	 * Add element <code>e</code> at position <code>p</code> in this singly
+	 * linked list.
 	 * 
 	 * @param e
-	 *          the element to add
+	 *            the element to add
 	 * @param p
-	 *          position to insert <code>e</code>; must be in the range 0 to
-	 *          <code>this.size()</code>.
+	 *            position to insert <code>e</code>; must be in the range 0 to
+	 *            <code>this.size()</code>.
 	 * @throws IndexOutOfBoundsException
-	 *           if <code>p</code> is outside the range 0 to
-	 *           <code>this.length()</code>.
+	 *             if <code>p</code> is outside the range 0 to
+	 *             <code>this.length()</code>.
 	 */
 	public void add(E e, int p)
 	{
 		// verify that index p is valid
 		if ((p < 0) || (p > this.length))
 		{
-			throw new IndexOutOfBoundsException("index " + p
-					+ " is out of range: 0 to " + this.length);
+			throw new IndexOutOfBoundsException("index " + p + " is out of range: 0 to " + this.length);
 		}
 		SLNode<E> newnode = new SLNode<E>(e, null);
 		SLNode<E> cursor = this.head;
@@ -102,17 +101,17 @@ public class SinglyLinkedList<E>
 	 * Remove the node at position <code>p</code> and return its element field.
 	 * 
 	 * @param p
-	 *          the position whose element we are to return
+	 *            the position whose element we are to return
 	 * @return the element in position <code>p</code>
 	 * @throws IndexOutOfBoundsException
-	 *           if <code>p</code> is outside the range 0 to length() - 1</code>
+	 *             if <code>p</code> is outside the range 0 to length() -
+	 *             1</code>
 	 */
 	public E remove(int p)
 	{
 		if ((p < 0) || (p >= this.length))
 		{
-			throw new IndexOutOfBoundsException("index " + p
-					+ " is out of range: 0 to " + (this.length - 1));
+			throw new IndexOutOfBoundsException("index " + p + " is out of range: 0 to " + (this.length - 1));
 		}
 		SLNode<E> cursor = head; // good for p == 0
 		if (p > 0)
@@ -133,10 +132,11 @@ public class SinglyLinkedList<E>
 	 * Return the element stored in the node at position <code>p</code>.
 	 * 
 	 * @param p
-	 *          the position whose element we want
+	 *            the position whose element we want
 	 * @return the element from position <code>p</code> of this linked list
 	 * @throws IndexOutOfBoundsException
-	 *           if the index p is outside the range 0 to <code>length - 1</code>.
+	 *             if the index p is outside the range 0 to
+	 *             <code>length - 1</code>.
 	 */
 	public E getElementAt(int p)
 	{
@@ -157,8 +157,8 @@ public class SinglyLinkedList<E>
 	}
 
 	/**
-	 * find - find the first node containing target, return null if target is not
-	 * found
+	 * find - find the first node containing target, return null if target is
+	 * not found
 	 */
 	private SLNode<E> find(E target)
 	{
@@ -200,24 +200,24 @@ public class SinglyLinkedList<E>
 
 		return cursor;
 	}
-	
+
 	public static void main(String[] args)
 	{
 		System.out.println("--[ Linked List Demo ]--");
-		
+
 		SinglyLinkedList<Person> myFriends = new SinglyLinkedList<Person>();
-		
+
 		myFriends.add(new Person("Jack", 4));
-		System.out.printf("I have %d friend(s)\n",myFriends.getLength());
+		System.out.printf("I have %d friend(s)\n", myFriends.getLength());
 
 		myFriends.add(new Person("Jill", 5));
 		myFriends.add(new Person("Jane", 5));
 		myFriends.add(new Person("John", 4));
-		System.out.printf("I have %d friend(s)\n",myFriends.getLength());
-		
+		System.out.printf("I have %d friend(s)\n", myFriends.getLength());
+
 		System.out.println("My Friends: ");
-		for(int i=0; i<myFriends.getLength(); i++)
+		for (int i = 0; i < myFriends.getLength(); i++)
 			System.out.println(myFriends.getElementAt(i));
-		
+
 	}
 }

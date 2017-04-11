@@ -1,4 +1,5 @@
 package Person;
+
 /**
  * @author rbaird
  *
@@ -7,7 +8,7 @@ public class Person
 {
 	private String name;
 	private int age;
-	
+
 	/**
 	 * @return the name
 	 */
@@ -16,7 +17,7 @@ public class Person
 		return name;
 	}
 
-	/** 
+	/**
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -29,7 +30,9 @@ public class Person
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -48,12 +51,15 @@ public class Person
 		{
 			if (other.name != null)
 				return false;
-		} else if (!name.equals(other.name))
+		}
+		else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -63,7 +69,8 @@ public class Person
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name)
 	{
@@ -79,7 +86,8 @@ public class Person
 	}
 
 	/**
-	 * @param age the age to set
+	 * @param age
+	 *            the age to set
 	 */
 	public void setAge(int age)
 	{
@@ -95,6 +103,5 @@ public class Person
 		this.name = name;
 		this.age = age;
 	}
-	
-	
+
 }
