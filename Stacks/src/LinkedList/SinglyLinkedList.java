@@ -1,8 +1,3 @@
-/*
- * CSIS1410
- * generic class SinglyLinkedList
- */
-
 package LinkedList;
 
 import Person.Person;

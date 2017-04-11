@@ -1,8 +1,3 @@
-/*
- * CSIS1410
- * Generic Stack Interface Specification
- */
-
 package Stack;
 
 /**
