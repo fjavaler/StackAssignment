@@ -56,6 +56,8 @@ public class LinkedStackTests
 	{
 		stack.push(me);
 		stack.push(tasha);
+		stack.push(javi);
+		stack.push(presley);
 	}
 
 	@Test

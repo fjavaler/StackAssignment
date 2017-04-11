@@ -12,7 +12,6 @@ public class LinkedStack<E> implements Stack<E>
 	public LinkedStack()
 	{
 		stack = new SinglyLinkedList<E>();
-		stack.setHead(null);
 	}
 
 	/**
@@ -24,9 +23,7 @@ public class LinkedStack<E> implements Stack<E>
 	public boolean isEmpty()
 	{
 		if (stack.getLength() == 0)
-		{
 			return true;
-		}
 		return false;
 	}
 
@@ -42,9 +39,7 @@ public class LinkedStack<E> implements Stack<E>
 	public E peek() throws EmptyStackException
 	{
 		if (isEmpty() == true)
-		{
 			throw new EmptyStackException();
-		}
 		return stack.getElementAt(stack.getLength() - 1);
 	}
 
@@ -59,19 +54,10 @@ public class LinkedStack<E> implements Stack<E>
 	public E pop()
 	{
 		if (isEmpty() == true)
-		{
 			throw new EmptyStackException();
-		}
-
-		SLNode<E> temp = stack.getHead();
-		for (int i = 0; i < stack.getLength() - 1; i++)
-		{
-			temp = temp.getSuccessor();
-		}
-		E returnable = temp.getElement();
-		temp.setSuccessor(null);
-		temp.setElement(null);
-		return returnable;
+		E value = peek();
+		stack.remove(stack.getLength()-1);
+		return value;
 	}
 
 	/**
@@ -83,8 +69,7 @@ public class LinkedStack<E> implements Stack<E>
 	@Override
 	public void push(E element)
 	{
-		stack.add(element);
-		System.out.println("test");
+		stack.add(element, stack.getLength());
 	}
 
 	/**
