@@ -218,6 +218,5 @@ public class SinglyLinkedList<E>
 		System.out.println("My Friends: ");
 		for (int i = 0; i < myFriends.getLength(); i++)
 			System.out.println(myFriends.getElementAt(i));
-
 	}
 }
