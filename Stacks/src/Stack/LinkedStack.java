@@ -95,8 +95,7 @@ public class LinkedStack<E> implements Stack<E>
 	@Override
 	public void push(E element)
 	{
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	/**
