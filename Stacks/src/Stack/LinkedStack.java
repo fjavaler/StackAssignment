@@ -8,19 +8,11 @@ import LinkedList.SinglyLinkedList;
 public class LinkedStack<E> implements Stack<E>
 {
 	SinglyLinkedList<E> stack;
-	SLNode<E> top;
-	SLNode<E> bottom;
-	int size;
 
 	public LinkedStack()
 	{
 		stack = new SinglyLinkedList<E>();
-		bottom = new SLNode<E>();
-		top = bottom;
-		top.setSuccessor(bottom);
-		stack.add(bottom.getElement());
-		;
-		size = 0;
+		stack.setHead(null);
 	}
 
 	/**
@@ -31,7 +23,7 @@ public class LinkedStack<E> implements Stack<E>
 	@Override
 	public boolean isEmpty()
 	{
-		if (size == 0)
+		if (stack.getLength() == 0)
 		{
 			return true;
 		}
@@ -53,7 +45,7 @@ public class LinkedStack<E> implements Stack<E>
 		{
 			throw new EmptyStackException();
 		}
-		return top.getElement();
+		return stack.getElementAt(stack.getLength()-1);
 	}
 
 	/**
@@ -70,20 +62,16 @@ public class LinkedStack<E> implements Stack<E>
 		{
 			throw new EmptyStackException();
 		}
-		E element = top.getElement();
 		
-		int i = 0;
-		SLNode<E> next = bottom.getSuccessor();
-		SLNode<E> target = null;
-		do
+		SLNode<E> temp = stack.getHead();
+		for(int i = 0; i < stack.getLength()-1; i++)
 		{
-			target = next.getSuccessor();
-			i++;
+			temp = temp.getSuccessor();
 		}
-		while (i < stack.getLength()-1);
-		target.setSuccessor(null);
-		target.setElement(null);
-		return element;
+		E returnable = temp.getElement();
+		temp.setSuccessor(null);
+		temp.setElement(null);
+		return returnable;
 	}
 
 	/**
@@ -95,7 +83,15 @@ public class LinkedStack<E> implements Stack<E>
 	@Override
 	public void push(E element)
 	{
-		
+		SLNode<E> newNode = new SLNode<E>();
+		newNode.setElement(element);
+		newNode.setSuccessor(null);
+		SLNode<E> temp = stack.getHead();
+		for (int i = 0; i < stack.getLength()-2; i++)
+		{
+			temp = temp.getSuccessor();
+		}
+		temp.setSuccessor(newNode);
 	}
 
 	/**
@@ -106,7 +102,6 @@ public class LinkedStack<E> implements Stack<E>
 	@Override
 	public int size()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		return stack.getLength();
 	}
 }
