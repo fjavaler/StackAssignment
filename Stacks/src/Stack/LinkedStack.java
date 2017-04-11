@@ -1,4 +1,26 @@
-
+/********************************************************
+ *
+ *  Project :  Generic LinkedStack Class | M6-A4
+ *  File    :  LinkedStack.java
+ *  Name    :  Frederick Javalera
+ *  Date    :  4/10/17 (4/10/17)
+ *
+ *  Description : (Narrative description, not code)
+ *
+ *    1) What is the purpose of the code; what problem does the code solve.
+ *	  The purpose of this code is to create a LinkedStack class and its methods.
+ *
+ *    2) What data-structures are used.
+ *    The data structure used is a SinglyLinkedList.
+ *
+ *    3) What algorithms, techniques, etc. are used in implementing the data structures.
+ *    Accessing values from elements are used prevalently in the data structure.
+ *
+ *    4) What methods are implemented (optional).
+ *
+ *  Changes :  <Description|date of modifications>
+ *
+ ********************************************************/
 package Stack;
 
 import java.util.EmptyStackException;

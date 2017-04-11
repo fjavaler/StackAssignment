@@ -1,3 +1,27 @@
+/********************************************************
+ *
+ *  Project :  Generic LinkedStack Class | M6-A4
+ *  File    :  LinkedStackTests.java
+ *  Name    :  Frederick Javalera
+ *  Date    :  4/10/17 (4/10/17)
+ *
+ *  Description : (Narrative description, not code)
+ *
+ *    1) What is the purpose of the code; what problem does the code solve.
+ *    The purpose of this code is to perform a series of tests on my implementation
+ *    of the LinkedStack class.
+ *
+ *    2) What data-structures are used.
+ *    LinkedStacks are used.
+ *
+ *    3) What algorithms, techniques, etc. are used in implementing the data structures.
+ *    JUnit tests.
+ *
+ *    4) What methods are implemented (optional).
+ *
+ *  Changes :  <Description|date of modifications>
+ *
+ ********************************************************/
 package Stack;
 
 import static org.junit.Assert.*;
