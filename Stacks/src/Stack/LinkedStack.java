@@ -75,7 +75,7 @@ public class LinkedStack<E> implements Stack<E>
 	/**
 	 * Return the number of elements currently stored in the stack.
 	 * 
-	 * @return topmost element of the stack
+	 * @return index of topmost element of the stack
 	 */
 	@Override
 	public int size()

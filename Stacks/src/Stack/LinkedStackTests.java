@@ -2,6 +2,8 @@ package Stack;
 
 import static org.junit.Assert.*;
 
+import java.util.EmptyStackException;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,13 +44,50 @@ public class LinkedStackTests
 	@Test
 	public void testPeek()
 	{
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testPop()
 	{
-		fail("Not yet implemented");
+		stack.push(me);
+		stack.push(javi);
+		Person remove = stack.pop();
+		assertEquals("Javi Javalera", remove.getName());
+		assertEquals(42, remove.getAge());
+		assertEquals(Person.class, remove.getClass());
+		assertEquals(1, stack.size());
+	}
+	
+	@Test(expected=EmptyStackException.class)
+	public void testPop2()
+	{
+		Person remove = stack.pop();
+	}
+	
+	@Test
+	public void testPop3()
+	{
+		stack.push(javi);
+		Person remove = stack.pop();
+		assertEquals("Javi Javalera", remove.getName());
+		assertEquals(42, remove.getAge());
+		assertEquals(Person.class, remove.getClass());
+		assertEquals(0, stack.size());
+	}
+	
+	@Test
+	public void testPop4()
+	{
+		stack.push(me);
+		stack.push(tasha);
+		stack.push(presley);
+		stack.push(javi);
+		Person remove = stack.pop();
+		assertEquals("Javi Javalera", remove.getName());
+		assertEquals(42, remove.getAge());
+		assertEquals(Person.class, remove.getClass());
+		assertEquals(3, stack.size());
 	}
 
 	@Test
@@ -58,6 +97,15 @@ public class LinkedStackTests
 		stack.push(tasha);
 		stack.push(javi);
 		stack.push(presley);
+		assertEquals(4, stack.size());
+	}
+	
+	@Test
+	public void testPush2()
+	{
+		stack.push(me);
+		stack.push(tasha);
+		assertEquals(2, stack.size());
 	}
 
 	@Test
