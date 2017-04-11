@@ -2,7 +2,6 @@ package Stack;
 
 import java.util.EmptyStackException;
 
-import LinkedList.SLNode;
 import LinkedList.SinglyLinkedList;
 
 public class LinkedStack<E> implements Stack<E>
