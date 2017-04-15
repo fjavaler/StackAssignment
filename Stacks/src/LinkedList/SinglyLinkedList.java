@@ -160,6 +160,7 @@ public class SinglyLinkedList<E>
 	 * find - find the first node containing target, return null if target is
 	 * not found
 	 */
+	@SuppressWarnings("unused")
 	private SLNode<E> find(E target)
 	{
 		SLNode<E> cursor = head.getSuccessor();
